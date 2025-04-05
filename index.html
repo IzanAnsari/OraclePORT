@@ -1,0 +1,158 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./index.css">
+        <style>
+          *{
+  margin: 0;
+  padding: 0;
+  font-family: 'poppins', sans-serif;
+  box-sizing: border-box;
+
+}
+.container{
+  width: 100vw;
+  height: 100vh;
+  background-image: url(https://i.postimg.cc/bvVb53Lq/background.png);
+  background-position: center;
+  background-size: cover;
+  padding: 0 8%;
+
+}
+.logo{
+  width: 120px;
+  padding: 20px 0;
+  cursor: pointer;
+
+}
+.content{
+  top: 50%;
+  position: absolute;
+  transform: translateY(-50%);
+  color: #fff;
+
+}
+.content h1{
+  font-size: 64px;
+  font-weight: 600;
+}
+.content h1 span{
+  color:#ff3753;
+}
+.content button{
+  background: transparent;
+  border: 2px solid #fff;
+  outline: none;
+  padding: 12px 25px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  cursor: pointer;
+
+}
+.content button img{
+  width: 15px;
+  margin-left: 10px;
+}
+.launch-time{
+  display: flex;
+}
+.launch-time div{
+  flex-basis: 200px;
+
+}
+.launch-time div p{
+  font-size: 60px;
+  margin-bottom: -4px;
+
+}
+.rocket{
+  width: 250px;
+  position: absolute;
+  right: 10%;
+  bottom: 0;
+  animation: rocket 4s linear infinite;
+
+}
+@keyframes rocket{
+  0%{
+      bottom: 0;
+      opacity: 0;
+  }
+  100%{
+      bottom: 105%;
+      opacity: 1;
+  }
+}
+
+
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+        <a href="./MAIN/index.html">   <img src="https://i.postimg.cc/DZtGv0tD/logo.png" class="logo"></a>
+            <div class="content">
+                <p>website Is Under Maintenance</p>
+                <h1>Portfolio <span>Launching</span> Soon</h1>
+                <div class="launch-time">
+                    <div>
+                        <p id="days">00</p>
+                        <span>Days</span>
+                    </div>
+                    <div>
+                        <p id="hours">00</p>
+                        <span>Hours</span>
+                    </div>
+                    <div>
+                        <p id="minutes">00</p>
+                        <span>Minutes</span>
+                    </div>
+                    <div>
+                        <p id="seconds">00</p>
+                        <span>Seconds</span>
+                    </div>
+                </div>
+               <a href="./MAIN/index2.html"> <button type="button">Sample Model <img src="https://i.postimg.cc/QC1THsDM/triangle.png"></button></a>
+            </div>
+            <img src="https://i.postimg.cc/PfwZ6bDk/rocket.png" class="rocket">
+        </div>
+    </body>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+    // Set the launch date (YYYY, MM (0-indexed), DD, HH, MM, SS)
+    const launchDate = new Date("2025-04-01T00:00:00").getTime();
+
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const timeRemaining = launchDate - now;
+
+        if (timeRemaining < 0) {
+            document.querySelector(".launch-time").innerHTML = "<h2>We Have Launched!</h2>";
+            clearInterval(countdownInterval);
+            return;
+        }
+
+        const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+        document.getElementById("days").textContent = days.toString().padStart(2, '0');
+        document.getElementById("hours").textContent = hours.toString().padStart(2, '0');
+        document.getElementById("minutes").textContent = minutes.toString().padStart(2, '0');
+        document.getElementById("seconds").textContent = seconds.toString().padStart(2, '0');
+    }
+
+    // Update countdown every second
+    const countdownInterval = setInterval(updateCountdown, 1000);
+    updateCountdown(); // Call once to prevent delay in rendering
+});
+
+    </script>
+</html>
