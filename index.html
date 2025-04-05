@@ -1,158 +1,355 @@
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./index.css">
-        <style>
-          *{
-  margin: 0;
-  padding: 0;
-  font-family: 'poppins', sans-serif;
-  box-sizing: border-box;
+<!DOCTYPE html>
+<html lang="en">
 
-}
-.container{
-  width: 100vw;
-  height: 100vh;
-  background-image: url(https://i.postimg.cc/bvVb53Lq/background.png);
-  background-position: center;
-  background-size: cover;
-  padding: 0 8%;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Portfolio</title>
+  <meta name="description" content="Portfolio Template for Developer" />
 
-}
-.logo{
-  width: 120px;
-  padding: 20px 0;
-  cursor: pointer;
+  <link rel="stylesheet" href="css/style.css" />
 
-}
-.content{
-  top: 50%;
-  position: absolute;
-  transform: translateY(-50%);
-  color: #fff;
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
+    rel="stylesheet" />
+</head>
 
-}
-.content h1{
-  font-size: 64px;
-  font-weight: 600;
-}
-.content h1 span{
-  color:#ff3753;
-}
-.content button{
-  background: transparent;
-  border: 2px solid #fff;
-  outline: none;
-  padding: 12px 25px;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  margin-top: 30px;
-  cursor: pointer;
-
-}
-.content button img{
-  width: 15px;
-  margin-left: 10px;
-}
-.launch-time{
-  display: flex;
-}
-.launch-time div{
-  flex-basis: 200px;
-
-}
-.launch-time div p{
-  font-size: 60px;
-  margin-bottom: -4px;
-
-}
-.rocket{
-  width: 250px;
-  position: absolute;
-  right: 10%;
-  bottom: 0;
-  animation: rocket 4s linear infinite;
-
-}
-@keyframes rocket{
-  0%{
-      bottom: 0;
-      opacity: 0;
-  }
-  100%{
-      bottom: 105%;
-      opacity: 1;
-  }
-}
-
-
-
-        </style>
-    </head>
-    <body>
-        <div class="container">
-        <a href="./MAIN/index.html">   <img src="https://i.postimg.cc/DZtGv0tD/logo.png" class="logo"></a>
-            <div class="content">
-                <p>website Is Under Maintenance</p>
-                <h1>Portfolio <span>Launching</span> Soon</h1>
-                <div class="launch-time">
-                    <div>
-                        <p id="days">00</p>
-                        <span>Days</span>
-                    </div>
-                    <div>
-                        <p id="hours">00</p>
-                        <span>Hours</span>
-                    </div>
-                    <div>
-                        <p id="minutes">00</p>
-                        <span>Minutes</span>
-                    </div>
-                    <div>
-                        <p id="seconds">00</p>
-                        <span>Seconds</span>
-                    </div>
-                </div>
-               <a href="./MAIN/index2.html"> <button type="button">Sample Model <img src="https://i.postimg.cc/QC1THsDM/triangle.png"></button></a>
-            </div>
-            <img src="https://i.postimg.cc/PfwZ6bDk/rocket.png" class="rocket">
+<body>
+  <header class="header">
+    <div class="header__content">
+      <div class="header__logo-container">
+        <div class="header__logo-img-cont">
+          <img src="./assets/jpeg/izan 0.2.jpg" alt="Ram Maheshwari Logo Image" class="header__logo-img" />
         </div>
-    </body>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-    // Set the launch date (YYYY, MM (0-indexed), DD, HH, MM, SS)
-    const launchDate = new Date("2025-04-01T00:00:00").getTime();
+        <span class="header__logo-sub">Mohammad Izan Ansari</span>
+      </div>
+      <div class="header__main">
+        <ul class="header__links">
+          <li class="header__link-wrapper">
+            <a href="./index.html" class="header__link"> Home </a>
+          </li>
+          <li class="header__link-wrapper">
+            <a href="./index.html#about" class="header__link">About </a>
+          </li>
+          <li class="header__link-wrapper">
+            <a href="./index.html#projects" class="header__link">
+              Projects
+            </a>
+          </li>
+          <li class="header__link-wrapper">
+            <a href="./index.html#contact" class="header__link"> Contact </a>
+          </li>
+        </ul>
+        <div class="header__main-ham-menu-cont">
+          <img src="./assets/svg/ham-menu.svg" alt="hamburger menu" class="header__main-ham-menu" />
+          <img src="./assets/svg/ham-menu-close.svg" alt="hamburger menu close"
+            class="header__main-ham-menu-close d-none" />
+        </div>
+      </div>
+    </div>
+    <div class="header__sm-menu">
+      <div class="header__sm-menu-content">
+        <ul class="header__sm-menu-links">
+          <li class="header__sm-menu-link">
+            <a href="./index.html"> Home </a>
+          </li>
 
-    function updateCountdown() {
-        const now = new Date().getTime();
-        const timeRemaining = launchDate - now;
+          <li class="header__sm-menu-link">
+            <a href="./index.html#about"> About </a>
+          </li>
 
-        if (timeRemaining < 0) {
-            document.querySelector(".launch-time").innerHTML = "<h2>We Have Launched!</h2>";
-            clearInterval(countdownInterval);
-            return;
-        }
+          <li class="header__sm-menu-link">
+            <a href="./index.html#projects"> Projects </a>
+          </li>
 
-        const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+          <li class="header__sm-menu-link">
+            <a href="./index.html#contact"> Contact </a>
+          </li>
+        </ul>
+      </div>
 
-        document.getElementById("days").textContent = days.toString().padStart(2, '0');
-        document.getElementById("hours").textContent = hours.toString().padStart(2, '0');
-        document.getElementById("minutes").textContent = minutes.toString().padStart(2, '0');
-        document.getElementById("seconds").textContent = seconds.toString().padStart(2, '0');
-    }
+    </div>
+  </header>
+  <section class="home-hero">
+    <div class="home-hero__content">
+      <h1 class="heading-primary">Hey, My name is <br>
+        Mohammad Izan Ansari</h1>
+      <div class="home-hero__info">
+        <p class="text-primary01">
+          And <span class="typing"></span>
+        </p>
+      </div>
+      <div class="home-hero__cta">
+        <a href="./#projects" class="btn btn--bg">Projects</a>
+      </div>
+    </div>
+    <div class="home-hero__socials">
+      <div class="home-hero__social">
+        <a href="https://www.linkedin.com/in/izan-ansari-a25b27254/" class="home-hero__social-icon-link">
+          <img src="./assets/png/linkedin-ico.png" alt="icon" class="home-hero__social-icon" />
+        </a>
+      </div>
+      <div class="home-hero__social">
+        <a href="https://github.com/IzanAnsari/" class="home-hero__social-icon-link">
+          <img src="./assets/png/github-ico.png" alt="icon" class="home-hero__social-icon" />
+        </a>
+      </div>
+      <div class="home-hero__social">
+        <a href="#" class="home-hero__social-icon-link">
+          <img src="./assets/png/twitter-ico.png" alt="icon" class="home-hero__social-icon" />
+        </a>
+      </div>
+      <div class="home-hero__social">
+        <a href="#" class="home-hero__social-icon-link">
+          <img src="./assets/png/yt-ico.png" alt="icon" class="home-hero__social-icon" />
+        </a>
+      </div>
+      <div class="home-hero__social">
+        <a href="https://www.instagram.com/izaanstark7/"
+          class="home-hero__social-icon-link home-hero__social-icon-link--bd-none">
+          <img src="./assets/png/insta-ico.png" alt="icon" class="home-hero__social-icon" />
+        </a>
+      </div>
+    </div>
+    <div class="home-hero__mouse-scroll-cont">
+      <div class="mouse"></div>
+    </div>
+  </section>
+  <section id="about" class="about sec-pad">
+    <div class="main-container">
+      <h2 class="heading heading-sec heading-sec__mb-med">
+        <span class="heading-sec__main">About Me</span>
+        <span class="heading-sec__sub">
+          Versatile Oracle Fusion Developer | Crafting Seamless Enterprise Experiences with Fusion Cloud Applications
+          and Oracle Technologies
+        </span>
+      </h2>
+      <div class="about__content">
+        <div class="about__content-main">
+          <h3 class="about__content-title">Get to know me!</h3>
+          <div class="about__content-details">
+            <p class="about__content-details-para">
+              Hello! I'm <strong>Mohammad Izan Ansari</strong>, a passionate <strong>Oracle Fusion Technical Consultant</strong> based in Mumbai. I’m currently working at 
+              <strong>
+                <a href="https://www.cloverinfotech.com/" target="_blank" style="color: #007bff; text-decoration: none;">
+                  Clover Infotech
+                </a>
+              </strong>, where I actively contribute to the design, development, and integration of <strong>enterprise-grade solutions</strong> using <strong>Oracle Fusion Cloud Applications</strong>.  
+              I collaborate with cross-functional teams on <strong>remote and on-site projects</strong>, delivering high-performance technical solutions tailored to diverse business needs.
+            </p>
+            
+           
+            <p class="about__content-details-para">
+              Throughout my journey, I’ve gained hands-on experience across modules like Finance, and SCM, and have
+              worked on customizations, integrations, and reporting using tools like BIP, OTBI, and FRS.
+            </p>
 
-    // Update countdown every second
-    const countdownInterval = setInterval(updateCountdown, 1000);
-    updateCountdown(); // Call once to prevent delay in rendering
-});
+          </div>
+          <a href="https://drive.google.com/file/d/1oCMC1mrOtPjK5inkDgsTcPFrz9Q0h35p/view?usp=drive_link"
+            class="btn btn--med btn--theme dynamicBgClr">Resume</a>
+          <a href="./views/about.html" class="btn btn--med btn--theme dynamicBgClr"
+            style="margin-left: 10PX;">Explore</a>
 
-    </script>
+        </div>
+        <div class="about__content-skills">
+
+          <img class="img" src="./assets/png/07_SQL_Associate__1_8471048516193178190.webp" alt="">
+          <img class="img" src="./assets/png/06_oracle_pl_sql_developer_associate__1_.webp" alt="">
+          <img class="img" src="./assets/jpeg/02000001001.jpg" alt="">
+          <img class="img" src="./assets/png/65_Oracle_Cloud_Visual_Builder_Studio_Badge.png" alt="">
+          <img class="img" src="./assets/jpeg/oic01.jpg" alt="">
+          <img class="img" src="./assets/jpeg/010001001.jpg" alt="">
+          <img class="img" src="./assets/jpeg/fun.jpg" alt="">
+          <img class="img" src="./assets/jpeg/report.jpg" alt="">
+          <img class="img" src="./assets/png/html.png" alt="">
+          <img class="img" src="./assets/png/css3.jpeg" alt="">
+          <img class="img" src="./assets/png/JS.png" alt="">
+          <img class="img" src="./assets/png/github3.jpg" alt="">
+
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="projects" class="projects sec-pad">
+    <div class="main-container">
+      <h2 class="heading heading-sec heading-sec__mb-bg">
+        <span class="heading-sec__main">Projects</span>
+        <span class="heading-sec__sub">
+          As an Oracle Fusion Applications developer, I've designed and implemented a range of dynamic business
+          solutions by configuring and extending Fusion modules, working with tools like Oracle Visual Builder, Oracle
+          Integration Cloud (OIC), and Business Process Management (BPM), showcasing my expertise in Oracle Fusion
+          development and cloud-based enterprise solutions.
+        </span>
+
+      </h2>
+
+      <div class="projects__content">
+        <div class="projects__row">
+          <div class="projects__row-img-cont">
+            <img src="./assets/png/project-mockup-example03.jpg" alt="Software Screenshot" class="projects__row-img"
+              loading="lazy" />
+          </div>
+          <div class="projects__row-content">
+            <h3 class="projects__row-content-title">Oracle OTBI Reports</h3>
+            <p class="projects__row-content-desc">
+              Designed and developed interactive OTBI reports to extract real-time data from Oracle Fusion Cloud
+              applications across modules like <strong> SCM and Finance.</strong> Implemented role-based data security
+              and delivered insights through <strong> customized dashboards,</strong> enabling stakeholders to make
+              data-driven decisions efficiently.
+            </p>
+
+            <a href="./views/project-2.html" class="btn btn--med btn--theme dynamicBgClr" target="_blank">Case Study</a>
+          </div>
+        </div>
+        <div class="projects__row">
+          <div class="projects__row-img-cont">
+            <img src="./assets/jpeg/project-mockup-example02.jpg" alt="Software Screenshot" class="projects__row-img"
+              loading="lazy" />
+          </div>
+          <div class="projects__row-content">
+            <h3 class="projects__row-content-title">Oracle BIP Reports</h3>
+            <p class="projects__row-content-desc">
+              Designed and developed <strong> BI Publisher reports </strong> for tracking and managing expenses within
+              <strong> Fusion Cloud</strong>. Enabled users to generate, view, and download detailed expense reports in
+              PDF and Excel formats, with data sourced from custom data models and <strong> SQL queries. </strong>
+            </p>
+
+            <a href="./views/project-1.html" class="btn btn--med btn--theme dynamicBgClr" target="_blank">Case Study</a>
+          </div>
+        </div>
+        <div class="projects__row">
+          <div class="projects__row-img-cont">
+            <img src="./assets/jpeg/FRS.jpg" alt="Software Screenshot" class="projects__row-img" loading="lazy" />
+          </div>
+          <div class="projects__row-content">
+            <h3 class="projects__row-content-title">Oracle FRS Report</h3>
+            <p class="projects__row-content-desc">
+              Designed and developed <strong>FRS (Financial Reporting Studio)</strong> reports in <strong>Oracle Fusion
+                Cloud</strong> to generate dynamic <strong>financial statements</strong> such as <strong>balance
+                sheets</strong>, <strong>profit and loss reports</strong>, and <strong>trial balances</strong>.
+              Leveraged <strong>General Ledger subject areas</strong> and applied <strong>filters, prompts,</strong> and
+              <strong>account hierarchies</strong> for accurate and role-based reporting.
+            </p>
+
+            <a href="./views/project-3.html" class="btn btn--med btn--theme dynamicBgClr" target="_blank">Case Study</a>
+          </div>
+        </div>
+        <div class="projects__row">
+          <div class="projects__row-img-cont">
+            <img src="./assets/png/project-mockup-example01.jpg" alt="Software Screenshot" class="projects__row-img"
+              loading="lazy" />
+          </div>
+          <div class="projects__row-content">
+            <h3 class="projects__row-content-title">Oracle API Integration</h3>
+            <p class="projects__row-content-desc">
+              Implemented <strong>Oracle Fusion Cloud</strong> API integrations to enable seamless <strong>data
+                upload</strong>, <strong>update</strong>, and <strong>deletion</strong> of <strong>product</strong> and
+              <strong>customer records</strong>. Utilized <strong>REST APIs</strong> to manage real-time <strong>data
+                transactions</strong>, supporting complete <strong>CRUD operations</strong> within integrated external
+              applications.
+            </p>
+
+            <a href="./views/project-4.html" class="btn btn--med btn--theme dynamicBgClr" target="_blank">Case Study</a>
+          </div>
+        </div>
+        
+        <div class="projects__row">
+          <div class="projects__row-img-cont">
+            <img src="./assets/jpeg/OIC.jpg" alt="Software Screenshot" class="projects__row-img" loading="lazy" />
+          </div>
+          <div class="projects__row-content">
+            <h3 class="projects__row-content-title">Oracle Integration Cloud</h3>
+            <p class="projects__row-content-desc">
+              Developed integrations using <strong>Oracle Integration Cloud (OIC)</strong> to connect <strong>Oracle
+                Fusion Cloud</strong> with external systems for seamless <strong>data exchange</strong>. Implemented
+              <strong>REST and SOAP connections</strong>, <strong>scheduled orchestration flows</strong>, and
+              <strong>error handling</strong> to automate business processes across modules like <strong>HCM</strong>
+              and <strong>Finance</strong>.
+            </p>
+
+            <a href="./views/project-5.html" class="btn btn--med btn--theme dynamicBgClr" target="_blank">Case Study</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contact" class="contact sec-pad dynamicBg">
+    <div class="main-container">
+      <h2 class="heading heading-sec heading-sec__mb-med">
+        <span class="heading-sec__main heading-sec__main--lt">Contact</span>
+        <span class="heading-sec__sub heading-sec__sub--lt">
+          Let's connect and turn ideas into reality! Feel free to reach out through the channels below, and let the
+          journey of collaboration begin.
+        </span>
+      </h2>
+      <div class="contact__form-container">
+        <form action="#" class="contact__form">
+          <div class="contact__form-field">
+            <h3 class="projects__row-content-title">Contact Me Today for Instant Support</h3>
+
+            <a href="mailto:izanansari123@gmail.com" class="btn btn--theme contact__btn">Email</a>
+            <a href="tel:+919359237760" class="btn btn--theme contact__btn">Make A Call</a>
+            <a href="https://wa.me/9359237760" class="btn btn--theme contact__btn">WhatsApp</a>
+            <br><br>
+            <div class="container">
+              <input type="text" value="izanansari123@gmail.com" id="myInput" readonly>
+              <button onclick="copyToClipboard(event)" id="copyButton">
+                <i class="fas fa-copy"></i> <span id="copyText">Copy Email</span>
+              </button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </section>
+  <footer class="main-footer">
+    <div class="main-container">
+      <div class="main-footer__upper">
+        <div class="main-footer__row main-footer__row-1">
+          <h2 class="heading heading-sm main-footer__heading-sm">
+            <span>Social</span>
+          </h2>
+          <div class="main-footer__social-cont">
+            <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/izan-ansari-a25b27254/">
+              <img class="main-footer__icon" src="./assets/png/linkedin-ico.png" alt="icon" />
+            </a>
+            <a target="_blank" rel="noreferrer" href="https://github.com/IzanAnsari/">
+              <img class="main-footer__icon" src="./assets/png/github-ico.png" alt="icon" />
+            </a>
+            <a target="_blank" rel="noreferrer" href="#">
+              <img class="main-footer__icon" src="./assets/png/twitter-ico.png" alt="icon" />
+            </a>
+            <a target="_blank" rel="noreferrer" href="#">
+              <img class="main-footer__icon" src="./assets/png/yt-ico.png" alt="icon" />
+            </a>
+            <a target="_blank" rel="noreferrer" href="https://www.instagram.com/izaanstark7/?next=%2F">
+              <img class="main-footer__icon main-footer__icon--mr-none" src="./assets/png/insta-ico.png" alt="icon" />
+            </a>
+          </div>
+        </div>
+        <div class="main-footer__row main-footer__row-2">
+          <h4 class="heading heading-sm text-lt">Mohammad Izan Ansari</h4>
+          <p class="main-footer__short-desc">
+            As an <strong>Oracle Fusion Technical Consultant</strong>, I specialize in developing and integrating
+            scalable enterprise solutions using <strong>Oracle Fusion Cloud Applications</strong>, enhancing business
+            efficiency through <strong>custom reports</strong>, <strong>API integrations</strong>, and <strong>Fusion
+              customizations</strong>.
+          </p>
+
+        </div>
+      </div>
+
+      <!-- If you give me some credit or shoutout here by linking to my website, then it will be a big thing for me and will help me a lot :) -->
+      <div class="main-footer__lower">
+        &copy; Copyright 2021. Made by
+        <a rel="noreferrer" target="_blank" href="#">Mohammad Izan Ansari</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./controller/index.js"></script>
+</body>
+
 </html>
