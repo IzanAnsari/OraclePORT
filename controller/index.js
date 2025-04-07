@@ -42,7 +42,6 @@ const typingPhrases = [
   "I'm SQL Developer",
   "I'm PL/SQL Developer",
   "I'm Oracle Fusion Developer...",
-  "I'm VBCS Developer...",
   "I'm OIC Developer..."
 ];
 
