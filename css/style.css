@@ -1305,3 +1305,47 @@ button:hover {
 .cert-btn:hover {
   transform: translateY(-2px);
 }
+
+/* Styles for larger screens (desktops, laptops) */
+@media (min-width: 1024px) {
+  .certificates {
+    /* Add styles for larger screens here */
+    display: flex; /* Example: Display certificates in a row */
+    flex-wrap: wrap; /* Example: Allow wrapping to the next line */
+    justify-content: center; /* Example: Center the certificates horizontally */
+  }
+}
+
+/* Styles for tablets */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .certificates {
+    /* Add styles for tablets here */
+    display: grid; /* Example: Use a grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Example: Responsive columns */
+    gap: 16px; /* Example: Spacing between certificates */
+  }
+}
+
+/* Styles for mobile devices */
+@media (max-width: 767px) {
+  .certificates {
+    /* Add styles for mobile devices here */
+    width: 95%; /* Example: Make the container take up most of the screen width */
+    margin: 0 auto; /* Example: Center the container horizontally */
+  }
+}
+
+/* Example: Adjust individual certificate item styles within the .certificates container */
+@media (min-width: 768px) {
+  .certificates .certificate-item {
+    width: 300px; /* Example: Fixed width for larger screens */
+    margin: 10px; /* Example: Spacing around each item */
+  }
+}
+
+@media (max-width: 767px) {
+  .certificates .certificate-item {
+    width: 100%; /* Example: Full width on mobile */
+    margin-bottom: 15px; /* Example: Spacing below each item */
+  }
+}
