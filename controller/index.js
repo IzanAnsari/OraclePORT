@@ -100,3 +100,5 @@ function copyToClipboard(event) {
     button.style.backgroundColor = "#3498db";  // Reset to original blue color
   }, 2000);
 }
+
+

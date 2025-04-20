@@ -1102,9 +1102,120 @@ button:hover {
   color: #0062b9;
 }
 
-.text {
-  font-size: 15px;
+
+.experience-section {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.company-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.company-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  object-fit: contain;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+  padding: 2px;
+  background-color: white;
+}
+
+
+
+.company-duration {
+  color: #666;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.timeline {
+  position: relative;
+  margin-left: 15px;
+  padding-left: 15px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 5px;
+  bottom: 65px;
+  width: 1px;
+  background: linear-gradient(to bottom, #003366, #006699, #0099cc);
+  opacity: 0.8;
+  box-shadow: 0 0 3px rgba(0, 128, 0, 0.3);
+}
+
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.timeline-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #0a66c2;
+  border: 1px solid white;
+  box-shadow: 0 0 2px rgba(0, 102, 194, 0.5);
+  border-radius: 50%;
+  position: absolute;
+  left: -8px;
+  top: 5px;
+  transition: transform 0.2s ease;
+  animation: pulse 1.5s infinite;
+}
+
+.timeline-dot:hover {
+  transform: scale(1.2);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+.timeline-content {
+  margin-left: 15px;
+}
+
+.timeline-content h3 {
+  font-size: 14px;
+  margin: 0 0 3px 0;
   font-weight: 500;
-  color: #606060;
-  margin: 30px 0px 40px 0px;
+  color: #1d1d1f;
+}
+
+.job-details {
+  font-size: 12px;
+  color: #555;
+  margin: 0 0 6px 0;
+}
+
+.location {
+  font-size: 12px;
+  color: #444;
+  margin-bottom: 8px;
+}
+
+.skills {
+  font-size: 12px;
+  color: #0a66c2;
 }
